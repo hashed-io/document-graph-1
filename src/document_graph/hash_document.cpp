@@ -1,4 +1,4 @@
-#include <hash_document.hpp>
+#include <document_graph/hash_document.hpp>
 #include <logger/logger.hpp>
 
 namespace hypha

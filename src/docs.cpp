@@ -1,5 +1,9 @@
 #include <docs.hpp>
 
+
+#include "document_graph/document_graph.cpp"
+#include "document_graph/hash_document.cpp"
+
 namespace hypha
 {
 
@@ -8,8 +12,34 @@ namespace hypha
 
    void docs::create(name &creator, ContentGroups &content_groups)
    {
+      require_auth( has_auth(creator) ? creator : get_self() );
       Document document(get_self(), creator, content_groups);
+
    }
+
+   void docs::createhash(name &creator, ContentGroups &content_groups)
+   {
+      require_auth( has_auth(creator) ? creator : get_self() );
+      // Document HashDocument(get_self(), creator, content_groups);
+
+   }
+
+   void docs::newhashdoc( eosio::name &creator )
+   {
+      require_auth( has_auth(creator) ? creator : get_self() );
+
+
+   }
+
+   void docs::makehashdoc( eosio::name &creator, const eosio::checksum256& _hash )
+   {
+      // require_auth( has_auth(creator) ? creator : get_self() );
+      // bool document_exists = HashDocument.exists(_self, _hash);
+      // check( document_exists, "no document" );
+
+   }
+
+
 
    // void docs::getornewget(const name &creator, ContentGroups &content_groups)
    // {

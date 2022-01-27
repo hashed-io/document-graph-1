@@ -1,0 +1,1 @@
+cleos create account eosio documents1 

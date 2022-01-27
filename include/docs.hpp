@@ -8,6 +8,7 @@
 #include <eosio/crypto.hpp>
 
 #include <document_graph/document_graph.hpp>
+#include <document_graph/hash_document.hpp>
 
 using namespace eosio;
 
@@ -22,7 +23,11 @@ namespace hypha
       DECLARE_DOCUMENT_GRAPH(docs)
 
       // Any account/member can creator a new document
-      ACTION create(eosio::name & creator, ContentGroups & content_groups);
+      ACTION create( eosio::name & creator, ContentGroups & content_groups );
+      ACTION createhash( eosio::name & creator, ContentGroups & content_groups );
+      ACTION newhashdoc( eosio::name &creator);
+      ACTION makehashdoc( eosio::name &creator, const eosio::checksum256& _hash);
+
       // ACTION createroot(const std::string &notes);
 
       // ACTION getornewget(const name &creator, ContentGroups &content_groups);
