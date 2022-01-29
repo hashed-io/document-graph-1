@@ -1,6 +1,10 @@
 #include <docs.hpp>
 
-
+#include "document_graph/content.cpp"
+#include "document_graph/document.cpp"
+#include "document_graph/edge.cpp"
+#include "document_graph/util.cpp"
+#include "document_graph/content_wrapper.cpp"
 #include "document_graph/document_graph.cpp"
 #include "document_graph/hash_document.cpp"
 

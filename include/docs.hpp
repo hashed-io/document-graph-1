@@ -16,6 +16,7 @@ namespace hypha
 {
    CONTRACT docs : public contract
    {
+
    public:
       docs(name self, name code, datastream<const char *> ds);
       ~docs();
@@ -27,39 +28,6 @@ namespace hypha
       ACTION createhash( eosio::name & creator, ContentGroups & content_groups );
       ACTION newhashdoc( eosio::name &creator);
       ACTION makehashdoc( eosio::name &creator, const eosio::checksum256& _hash);
-
-      // ACTION createroot(const std::string &notes);
-
-      // ACTION getornewget(const name &creator, ContentGroups &content_groups);
-      // ACTION getornewnew(const name &creator, ContentGroups &content_groups);
-
-      // ACTION newedge(eosio::name & creator, const checksum256 &from_node, const checksum256 &to_node, const name &edge_name);
-
-      // ACTION removeedge(const checksum256 &from_node, const checksum256 &to_node, const name &edge_name);
-
-      // ACTION erase(const checksum256 &hash);
-
-      // ACTION testgetasset(const checksum256 &hash,
-      //                     const std::string &groupLabel,
-      //                     const std::string &contentLabel,
-      //                     const asset &contentValue);
-
-      // ACTION testgetgroup(const checksum256 &hash,
-      //                     const std::string &groupLabel);
-
-      // ACTION testcntnterr(string test);
-
-      // // Fork creates a new document (node in a graph) from an existing document.
-      // // The forked content should contain only new or updated entries to avoid data duplication. (lazily enforced?)
-      // ACTION fork(const checksum256 &hash, const name &creator, const vector<document_graph::content_group> &content_groups);
-
-      // Creates a 'certificate' on a specific fork.
-      // A certificate can be customized based on the document, but it represents
-      // the signatures, with notes/timestamp, and of course auth is enforced
-      // ACTION certify(const name &certifier, const checksum256 &hash, const std::string &notes);
-
-      // // debug only: deletes all docs
-      // ACTION reset();
 
    private:
       DocumentGraph m_dg = DocumentGraph(get_self());
