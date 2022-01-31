@@ -20,6 +20,13 @@ namespace hypha
 
    }
 
+   void docs::createdual (name &creator, ContentGroups &content_groups)
+   {
+      require_auth( has_auth(creator) ? creator : get_self() );
+      Document Document(get_self(), creator, content_groups);
+      HashDocument HashDocument(get_self(), creator, content_groups);
+   }
+
    void docs::newhashdoc( eosio::name &creator )
    {
       require_auth( has_auth(creator) ? creator : get_self() );

@@ -25,6 +25,8 @@ namespace hypha
 
       // Any account/member can creator a new document
       ACTION create( eosio::name & creator, ContentGroups & content_groups );
+      ACTION createdual (eosio::name &creator, ContentGroups &content_groups);
+
       ACTION createhash( eosio::name & creator, ContentGroups & content_groups );
       ACTION newhashdoc( eosio::name &creator);
       ACTION makehashdoc( eosio::name &creator, const eosio::checksum256& _hash);
