@@ -124,7 +124,7 @@ namespace hypha
 
     const std::string Document::toString()
     {
-        // return toString(content_groups);
+        return toString(content_groups);
     }
 
     const std::string Document::toString(const ContentGroups &contentGroups)

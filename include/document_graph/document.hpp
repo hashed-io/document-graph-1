@@ -78,6 +78,13 @@ namespace hypha
             // default value, for cases where hash is not used, would be all zeros
             return eosio::checksum256{};
         }
+
+        // toString iterates through all content, all levels, concatenating all values
+        // the resulting string is used for fingerprinting and hashing
+        const std::string toString();
+        static const std::string toString(const ContentGroups &contentGroups);
+        static const std::string toString(const ContentGroup &contentGroup);
+        
     private:
         // members, with names as serialized - these must be public for EOSIO tables
         std::uint64_t id;
@@ -89,12 +96,6 @@ namespace hypha
         // I think we should remove this- it shouldn't be saved
         // because it can be derived and it wastes 64-bytes per document
         eosio::name contract;
-
-        // toString iterates through all content, all levels, concatenating all values
-        // the resulting string is used for fingerprinting and hashing
-        const std::string toString();
-        static const std::string toString(const ContentGroups &contentGroups);
-        static const std::string toString(const ContentGroup &contentGroup);
 
         EOSLIB_SERIALIZE(Document, (id)(creator)(content_groups)(updated_date)(created_date)(contract))
 
