@@ -11,6 +11,7 @@ add_contract( docs docs
     document_graph/content_wrapper.cpp
     document_graph/document.cpp
     document_graph/document_graph.cpp 
+    document_graph/hash_document.cpp
     document_graph/edge.cpp )
     
 target_include_directories( docs PUBLIC ${CMAKE_SOURCE_DIR}/../include )
